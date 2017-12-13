@@ -16,7 +16,6 @@ function ftp_get_filelist($con, $path){
     $a = 0;
     if(count($contents)){
         foreach($contents as $line){
-            //preg_match("#([drwx\-]+)([\s]+)([0-9]+)([\s]+)([0-9]+)([\s]+)([a-zA-Z0-9\.]+)([\s]+)([0-9]+)([\s]+)([a-zA-Z]+)([\s ]+)([0-9]+)([\s]+)([0-9]+):([0-9]+)([\s]+)([a-zA-Z0-9\.\-\_ ]+)#si", $line, $out);
             preg_match("#([d?r?w?x?\-]+)([\s]+)([0-9]+)([\s]+)([0-9]+)([\s]+)([a-zA-Z0-9_\.]+)([\s]+)([0-9]+)([\s]+)([a-zA-Z]+)([\s ]+)([0-9]+)([\s]+)([0-9]+):([0-9]+)([\s]+)(.*)#si", $line, $out);
             if(@$out[3] != 1 && (@$out[18] == "." || @$out[18] == "..")){
                 // do nothing for now
