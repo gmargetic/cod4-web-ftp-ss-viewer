@@ -137,9 +137,9 @@ ftp_close($ftp_conn);
           image = $(this).attr('image');
           player = $(this).attr('player');
           decImage = $.base64.decode(image)
-          getImage = '?image=' + image;
+          getImage = '<?=$actual_link?>?image=' + image;
           $('.modal-title').text('Player: ' + player);
-          $('.set-image').html('<img style="max-width:100%;" src="/'+getImage+'">');
+          $('.set-image').html('<img style="max-width:100%;" src="'+getImage+'">');
           $('input#url').attr('value', '<?=$actual_link?>'+getImage);
         });
       });
