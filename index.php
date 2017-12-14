@@ -140,7 +140,7 @@ ftp_close($ftp_conn);
           getImage = '<?=$actual_link?>?image=' + image;
           $('.modal-title').text('Player: ' + player);
           $('.set-image').html('<img style="max-width:100%;" src="'+getImage+'">');
-          $('input#url').attr('value', '<?=$actual_link?>'+getImage);
+          $('input#url').attr('value', getImage);
         });
       });
     </script>
