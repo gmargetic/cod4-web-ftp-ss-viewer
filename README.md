@@ -6,6 +6,7 @@ Warning! This won't work on all hosts due security settings on hosts!
 Ask host to grant access to file list via ftp from remote server.
 
 ###index.php - PURE-FTPD version
+
 ###index2.php - other ftp servers (sftp)
 
 Copyright Goran Margetic - https://goran-margetic.iz.hr
