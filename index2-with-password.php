@@ -16,6 +16,7 @@ $cfg['img']['dir'] = "/cod4_51/screenshots";  // without trailing slash
 //ini_set('session.save_path', './tmp');
 session_start();
 $error = null;
+$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 if(!empty($_POST['auth']) AND $_POST['auth'] == "true") {
 	if($_POST['password'] == $cfg['auth']['pass']) {
@@ -56,8 +57,6 @@ if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == md5($cfg['auth
 	  $newPlayerName = substr($newPlayerName, 0, -4);
 	  return $newPlayerName;
 	}
-
-	$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 	$ftp_conn = ftp_connect($cfg['ftp']['host'], $cfg['ftp']['port'], $cfg['ftp']['timeout']) or die("Could not connect to ".$cfg['ftp']['host'].':'.$cfg['ftp']['port']);
 	$login    = ftp_login($ftp_conn, $cfg['ftp']['user'], $cfg['ftp']['pass']);
