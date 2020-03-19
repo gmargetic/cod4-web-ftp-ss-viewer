@@ -25,7 +25,7 @@ if(!empty($_POST['auth']) AND $_POST['auth'] == "true") {
 		$error = "Incorrect password, please try again!";
 	}
 }
-if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == md5($cfg['auth']['pass'])) {
+if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == ($md5pw = md5($cfg['auth']['pass']))) {
 	//-------------------------------------------------------------------------------------
 	function ftp_get_filelist($con, $path){
 		$files = array();
@@ -94,7 +94,7 @@ if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == md5($cfg['auth
 		if($error != null) {
 			echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
 		}
-		if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == $cfg['auth']['pass']) { ?>
+		if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == $md5pw) { ?>
       <div class="table-responsive">
         <table id="images" class="table table-striped table-bordered table-hover table-condensed table-sortable">
           <thead>
@@ -149,7 +149,7 @@ if(!empty($_SESSION['authviewer']) AND $_SESSION['authviewer'] == md5($cfg['auth
 						<input type="password" class="form-control" name="password" placeholder="Password" required>
 					</div>
 					<div class="form-group">
-						<input type="submit" class="btn btn-success" name="Login">
+						<input type="submit" class="btn btn-success" name="login" value="Login">
 					</div>
 				</form>
 			</div>
