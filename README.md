@@ -10,5 +10,3 @@ Ask host to grant access to file list via ftp from remote server.
 - index2-with-password.php - Under development (possible errors)
 
 Copyright Goran Margetic - https://goranmargetic.com
-
-![Creative Commons Attribution-NonCommercial 4.0 International License](https://licensebuttons.net/l/by-nc/4.0/88x31.png)
